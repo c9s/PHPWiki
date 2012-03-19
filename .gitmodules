@@ -1,0 +1,3 @@
+[submodule "php-markdown"]
+	path = php-markdown
+	url = https://github.com/wolfie/php-markdown.git
