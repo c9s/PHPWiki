@@ -25,3 +25,18 @@ View Html For PHP5.4:
 
     cd html
     php -S localhost:8888
+
+
+Hacking
+-------
+
+1. Get PHP Onion:
+
+2. Run onion bundle command:
+
+    $ onion bundle
+
+3. run compile command:
+
+    $ bash utils/compile.sh
+
