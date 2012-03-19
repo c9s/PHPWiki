@@ -37,7 +37,7 @@ function PhpMarkdown($text)
         $text );
     return Markdown($text);
 }
-
+//Default style.
 $style=<<<EOF
         body { 
             padding: 15px 30px; 
@@ -76,6 +76,7 @@ list($script,$input,$output,$stylesheet) = $argv;
 if( ! file_exists($output) )
     mkdir( $output , 0755 , true );
 
+//if stylesheet exists
 if( file_exists($stylesheet) )
 {
     $style = file_get_contents($stylesheet);
@@ -131,7 +132,7 @@ foreach( $dirs as $dir ) {
 
             $html = PhpMarkdown($text);
             $html = str_replace('%BODY%', $html, $wrapper );
-            $html = str_replace('%STYLE%', $style, $html );
+            $html = str_replace('%STYLE%', $style, $html );//replace style area
             $d = dirname($path);
             if( ! file_exists($d) ) 
                 mkdir( $d , 0755, true );
