@@ -12,7 +12,7 @@ and supports php built-in highlight method.
 Screenshot
 ----------
 
-<img src="http://images.plurk.com/9697777b26fae43c1653cdaf2223912c.jpg"/>
+<img src="http://cloud.github.com/downloads/c9s/PHPWikiGen/Screen%20Shot%202012-03-19%20at%20%E4%B8%8B%E5%8D%8812.59.32.png"/>
 
 
 Usage
