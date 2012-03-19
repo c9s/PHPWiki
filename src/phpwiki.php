@@ -60,6 +60,7 @@ $wrapper =<<<HTML
         background-color: #bbb;
         font-family: sans-serif;
     }
+    a { color: blue; }
     h1, h2, h3, h4 { 
         color: #232323;
         text-shadow: #ddd 1px 1px 1px;
