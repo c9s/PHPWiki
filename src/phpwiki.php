@@ -60,6 +60,10 @@ $wrapper =<<<HTML
         background-color: #bbb;
         font-family: sans-serif;
     }
+    h1, h2, h3, h4 { 
+        color: #232323;
+        text-shadow: #ddd 1px 1px 1px;
+    }
     p { 
         color: #333;
         text-shadow: #ccc 1px 1px 1px;
@@ -128,4 +132,3 @@ foreach( $dirs as $dir ) {
     }
 }
 echo "Done", "\n";
-

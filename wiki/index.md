@@ -1,7 +1,7 @@
 Index Page
 ==========
 
-This is a [[link]]
+This is a [[Link|Wiki Link]]
 
 # Header I
 
