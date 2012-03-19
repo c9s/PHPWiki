@@ -1,5 +1,5 @@
 <?php
-
+require 'GetOptionKit/src/GetOptionKit/Init.php';
 function getRelativePath($from, $to)
 {
    $from = explode('/', $from);
@@ -38,8 +38,38 @@ function PhpMarkdown($text)
     return Markdown($text);
 }
 
+
+//Default style.
+$style=<<<EOF
+        body { 
+            padding: 15px 30px; 
+            background-color: #ccc;
+            font-family: sans-serif;
+        }
+        a { color: blue; }
+        h1, h2, h3, h4 { 
+            color: #232323;
+            text-shadow: #ddd 1px 1px 1px;
+        }
+        p { 
+            color: #333;
+            text-shadow: #ccc 1px 1px 1px;
+        }
+        pre { 
+            background: #ddd;
+            border-radius: 10px;
+            border: 1px solid #999;
+            box-shadow: #666 -2px -2px 5px;
+            padding: 10px;
+        }
+        code { 
+            font-family: Monaco, Monospace, Courier New;
+            font-size: 0.8em;
+        }
+EOF;
+
 if( empty($argv) || count($argv) < 3 ) {
-    die("Usage: phpwiki [input] [output]\n");
+    die("Usage: phpwiki [input] [output] [-s, --style [<value>]]\n");
 }
 
 list($script,$input,$output) = $argv;
@@ -48,6 +78,24 @@ list($script,$input,$output) = $argv;
 if( ! file_exists($output) )
     mkdir( $output , 0755 , true );
 
+use GetOptionKit\GetOptionKit;
+$opt = new GetOptionKit;
+$opt->add( 's|style?' , 'option with another stylesheet file' );
+//$opt->specs->printOptions();
+try {
+    $result = $opt->parse( $argv );
+    if(isset($result->style))
+        $stylesheet = $result->style;
+} catch( Exception $e ) {
+    echo $e->getMessage();
+}
+
+//if stylesheet exists
+if( file_exists($stylesheet) )
+{
+    $style = file_get_contents($stylesheet);
+}
+
 $dirs = array($input);
 
 $wrapper =<<<HTML
@@ -55,31 +103,7 @@ $wrapper =<<<HTML
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <style>
-    body { 
-        padding: 15px 30px; 
-        background-color: #ccc;
-        font-family: sans-serif;
-    }
-    a { color: blue; }
-    h1, h2, h3, h4 { 
-        color: #232323;
-        text-shadow: #ddd 1px 1px 1px;
-    }
-    p { 
-        color: #333;
-        text-shadow: #ccc 1px 1px 1px;
-    }
-    pre { 
-        background: #ddd;
-        border-radius: 10px;
-        border: 1px solid #999;
-        box-shadow: #666 -2px -2px 5px;
-        padding: 10px;
-    }
-    code { 
-        font-family: Monaco, Monospace, Courier New;
-        font-size: 0.8em;
-    }
+    %STYLE%
     </style>
 </head>
 <body>
@@ -89,7 +113,7 @@ $wrapper =<<<HTML
 HTML;
 
 echo "Generating wiki doc to $output ...\n";
-
+ 
 foreach( $dirs as $dir ) {
 
     foreach (new RecursiveIteratorIterator(
@@ -122,7 +146,7 @@ foreach( $dirs as $dir ) {
 
             $html = PhpMarkdown($text);
             $html = str_replace('%BODY%', $html, $wrapper );
-
+            $html = str_replace('%STYLE%', $style, $html );//replace style area
             $d = dirname($path);
             if( ! file_exists($d) ) 
                 mkdir( $d , 0755, true );

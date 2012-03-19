@@ -1,3 +1,6 @@
 [submodule "php-markdown"]
 	path = php-markdown
 	url = https://github.com/wolfie/php-markdown.git
+[submodule "GetOptionKit"]
+	path = GetOptionKit
+	url = https://github.com/c9s/GetOptionKit.git
