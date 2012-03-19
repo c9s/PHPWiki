@@ -12,7 +12,8 @@ and supports php built-in highlight method.
 Usage
 -----
 
-    ./phpwiki.phar wiki html
+    curl -O https://raw.github.com/c9s/PHPWikiGen/master/phpwiki.phar
+    php phpwiki.phar wiki html
 
 View Html For PHP5.4:
 
