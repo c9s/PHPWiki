@@ -1,5 +1,4 @@
 <?php
-require 'GetOptionKit/src/GetOptionKit/Init.php';
 function getRelativePath($from, $to)
 {
    $from = explode('/', $from);
