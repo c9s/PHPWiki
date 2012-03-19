@@ -71,27 +71,29 @@ if( empty($argv) || count($argv) < 3 ) {
     die("Usage: phpwiki [input] [output] [-s, --style [<value>]]\n");
 }
 
+use GetOptionKit\GetOptionKit;
+
 list($script,$input,$output) = $argv;
 
 // $output = 'wiki_html';
 if( ! file_exists($output) )
     mkdir( $output , 0755 , true );
 
-use GetOptionKit\GetOptionKit;
+$stylesheet = null;
 $opt = new GetOptionKit;
 $opt->add( 's|style?' , 'option with another stylesheet file' );
-//$opt->specs->printOptions();
+
+// $opt->specs->printOptions();
 try {
     $result = $opt->parse( $argv );
     if(isset($result->style))
         $stylesheet = $result->style;
 } catch( Exception $e ) {
-    echo $e->getMessage();
+    die( $e->getMessage() );
 }
 
 //if stylesheet exists
-if( file_exists($stylesheet) )
-{
+if( file_exists($stylesheet) ) {
     $style = file_get_contents($stylesheet);
 }
 
