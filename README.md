@@ -9,6 +9,12 @@ and supports php built-in highlight method.
 * support wiki link format.
 * use php built-in highlight method.
 
+Screenshot
+----------
+
+<img src="http://images.plurk.com/9697777b26fae43c1653cdaf2223912c.jpg"/>
+
+
 Usage
 -----
 
