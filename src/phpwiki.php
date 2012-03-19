@@ -57,7 +57,7 @@ $wrapper =<<<HTML
     <style>
     body { 
         padding: 15px 30px; 
-        background-color: #bbb;
+        background-color: #ccc;
         font-family: sans-serif;
     }
     a { color: blue; }
