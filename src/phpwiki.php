@@ -1,5 +1,5 @@
 <?php
-
+require 'GetOptionKit/src/GetOptionKit/Init.php';
 function getRelativePath($from, $to)
 {
    $from = explode('/', $from);
@@ -37,6 +37,8 @@ function PhpMarkdown($text)
         $text );
     return Markdown($text);
 }
+
+
 //Default style.
 $style=<<<EOF
         body { 
@@ -67,14 +69,26 @@ $style=<<<EOF
 EOF;
 
 if( empty($argv) || count($argv) < 3 ) {
-    die("Usage: phpwiki [input] [output] [stylesheet]\n");
+    die("Usage: phpwiki [input] [output] [-s, --style [<value>]]\n");
 }
 
-list($script,$input,$output,$stylesheet) = $argv;
+list($script,$input,$output) = $argv;
 
 // $output = 'wiki_html';
 if( ! file_exists($output) )
     mkdir( $output , 0755 , true );
+
+use GetOptionKit\GetOptionKit;
+$opt = new GetOptionKit;
+$opt->add( 's|style?' , 'option with another stylesheet file' );
+//$opt->specs->printOptions();
+try {
+    $result = $opt->parse( $argv );
+    if(isset($result->style))
+        $stylesheet = $result->style;
+} catch( Exception $e ) {
+    echo $e->getMessage();
+}
 
 //if stylesheet exists
 if( file_exists($stylesheet) )
