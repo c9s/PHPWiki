@@ -65,7 +65,13 @@ $style=<<<EOF
         font-family: Monaco, Monospace, Courier New;
         font-size: 0.8em;
     }
-    table td { background: #eee; padding: 3px; }
+    table { background: #aaa; }
+    table td { 
+        background: #ddd; 
+        color: #555;
+        padding: 3px 6px;
+        min-width: 200px;
+    }
 EOF;
 
 if( empty($argv) || count($argv) < 3 ) {
