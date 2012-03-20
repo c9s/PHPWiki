@@ -40,31 +40,32 @@ function PhpMarkdown($text)
 
 //Default style.
 $style=<<<EOF
-        body { 
-            padding: 15px 30px; 
-            background-color: #ccc;
-            font-family: sans-serif;
-        }
-        a { color: blue; }
-        h1, h2, h3, h4 { 
-            color: #232323;
-            text-shadow: #ddd 1px 1px 1px;
-        }
-        p { 
-            color: #333;
-            text-shadow: #ccc 1px 1px 1px;
-        }
-        pre { 
-            background: #ddd;
-            border-radius: 10px;
-            border: 1px solid #999;
-            box-shadow: #666 -2px -2px 5px;
-            padding: 10px;
-        }
-        code { 
-            font-family: Monaco, Monospace, Courier New;
-            font-size: 0.8em;
-        }
+    body { 
+        padding: 15px 30px; 
+        background-color: #ccc;
+        font-family: sans-serif;
+    }
+    a { color: blue; }
+    h1, h2, h3, h4 { 
+        color: #232323;
+        text-shadow: #ddd 1px 1px 1px;
+    }
+    p { 
+        color: #333;
+        text-shadow: #ccc 1px 1px 1px;
+    }
+    pre { 
+        background: #ddd;
+        border-radius: 10px;
+        border: 1px solid #999;
+        box-shadow: #666 -2px -2px 5px;
+        padding: 10px;
+    }
+    code { 
+        font-family: Monaco, Monospace, Courier New;
+        font-size: 0.8em;
+    }
+    table td { background: #eee; padding: 3px; }
 EOF;
 
 if( empty($argv) || count($argv) < 3 ) {
