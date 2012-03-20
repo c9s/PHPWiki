@@ -67,8 +67,8 @@ $style=<<<EOF
     }
     table { background: #aaa; }
     table td { 
-        background: #ddd; 
-        color: #555;
+        background: #eee; 
+        color: #111;
         padding: 3px 6px;
         min-width: 200px;
     }
