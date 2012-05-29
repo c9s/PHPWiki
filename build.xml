@@ -41,8 +41,8 @@
     <mkdir dir="${basedir}/build/phpdox"/>
     <exec executable="git" failonerror="true">
         <arg value="submodule"/>
-        <arg value="--init"/>
         <arg value="update"/>
+        <arg value="--init"/>
     </exec>
  </target>
 
