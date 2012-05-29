@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<package xmlns="http://pear.php.net/dtd/package-2.0" xmlns:tasks="http://pear.php.net/dtd/tasks-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" packagerversion="1.4.10" version="2.0" xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0        http://pear.php.net/dtd/tasks-1.0.xsd        http://pear.php.net/dtd/package-2.0        http://pear.php.net/dtd/package-2.0.xsd">
+  <name>PHPWiki</name>
+  <channel>pear.corneltek.com</channel>
+  <summary>PHPWiki</summary>
+  <description>PHPWiki</description>
+  <lead>
+    <name>Yo-An Lin</name>
+    <user/>
+    <email>cornelius.howl@gmail.com</email>
+    <active>yes</active>
+  </lead>
+  <date>2012-05-29</date>
+  <time>14:25:11</time>
+  <version>
+    <release>0.0.1</release>
+    <api>0.0.1</api>
+  </version>
+  <stability>
+    <release>alpha</release>
+    <api>alpha</api>
+  </stability>
+  <license>PHP</license>
+  <notes>-</notes>
+  <contents>
+    <dir name="/">
+      <file name="src/phpwiki.php" role="php" md5sum="0a72cb7fbd4be61b6d1585a7b73b28ff"/>
+      <file name="phpwiki" role="script" md5sum="ab50d54df8399f98595e35ea61927309"/>
+    </dir>
+  </contents>
+  <dependencies>
+    <required>
+      <php>
+        <min>5.3</min>
+      </php>
+      <pearinstaller>
+        <min>1.4</min>
+      </pearinstaller>
+      <package>
+        <name>GetOptionKit</name>
+        <channel>pear.corneltek.com</channel>
+      </package>
+    </required>
+  </dependencies>
+  <phprelease>
+    <filelist>
+      <install name="src/phpwiki.php" as="phpwiki.php"/>
+      <install name="phpwiki" as="phpwiki"/>
+    </filelist>
+  </phprelease>
+</package>
