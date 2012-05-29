@@ -14,12 +14,18 @@ Screenshot
 
 <img src="http://cloud.github.com/downloads/c9s/PHPWikiGen/Screen%20Shot%202012-03-19%20at%20%E4%B8%8B%E5%8D%8812.59.32.png"/>
 
+Installation
+------------
+
+    $ pear channel-discover pear.corneltek.com
+    $ pear install corneltek/PHPWiki
+
 
 Usage
 -----
 
-    curl -O https://raw.github.com/c9s/PHPWikiGen/master/phpwiki.phar
-    php phpwiki.phar wiki html
+    curl -O https://raw.github.com/c9s/PHPWikiGen/master/phpwiki
+    php phpwiki wiki html
 
 View Html For PHP5.4:
 
