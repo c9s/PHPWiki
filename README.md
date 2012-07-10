@@ -17,14 +17,14 @@ Screenshot
 Installation
 ------------
 
-    $ pear channel-discover pear.corneltek.com
-    $ pear install corneltek/PHPWiki
+Simply use wget;
 
+    $ wget https://raw.github.com/c9s/PHPWiki/master/phpwiki
 
 Usage
 -----
+Convert markdown wiki to html
 
-    curl -O https://raw.github.com/c9s/PHPWikiGen/master/phpwiki
     php phpwiki wiki html
 
 View Html For PHP5.4:
@@ -40,7 +40,7 @@ Hacking
 
 2. Run onion bundle command:
 
-    $ onion bundle
+    $ onion install
 
 3. run compile command:
 
