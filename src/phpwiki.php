@@ -42,7 +42,7 @@ function PhpMarkdown($text)
 $style=<<<EOF
     body { 
         padding: 15px 30px; 
-        background-color: #ccc;
+        background-color: #eee;
         font-family: sans-serif;
     }
     a { color: blue; }
