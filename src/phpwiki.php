@@ -42,7 +42,7 @@ function PhpMarkdown($text)
 $style=<<<EOF
     body { 
         padding: 15px 30px; 
-        background-color: #eee;
+        background-color: #f3f3f3;
         font-family: sans-serif;
     }
     a { color: blue; }
@@ -56,10 +56,12 @@ $style=<<<EOF
     }
     pre { 
         margin: 10px 15px;
-        background: #ddd;
+        background: #eee;
         border-radius: 10px;
         border: 1px solid #999;
-        box-shadow: #333 0px 0px 10px;
+        -moz-box-shadow:    inset 0 0 10px #000000;
+        -webkit-box-shadow: inset 0 0 10px #000000;
+        box-shadow:         inset 0 0 10px #000000;
         padding: 10px;
     }
     code { 
